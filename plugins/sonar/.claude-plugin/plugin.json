@@ -1,0 +1,9 @@
+{
+  "name": "sonar",
+  "version": "1.0.0",
+  "description": "Plays a sound when Claude Code finishes a task, hits an error, or needs your approval.",
+  "author": {
+    "name": "traction"
+  },
+  "keywords": [ "notification", "sound", "productivity" ]
+}
