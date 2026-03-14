@@ -1,0 +1,19 @@
+{
+  "name": "claude-marketplace",
+  "owner": {
+    "name": "iamtraction"
+  },
+  "metadata": {
+    "description": "A collection of Claude Code plugins by TRACTION."
+  },
+  "plugins": [
+    {
+      "name": "sonar",
+      "source": "./plugins/sonar",
+      "description": "Plays a sound when Claude Code finishes a task, hits an error, or needs your approval.",
+      "version": "1.0.0",
+      "license": "MIT",
+      "keywords": [ "notification", "sound", "productivity" ]
+    }
+  ]
+}
