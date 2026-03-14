@@ -15,13 +15,13 @@ A Claude Code plugin that plays a sound when something happens so you can minimi
 **Step 1** — Add the marketplace (once):
 
 ```
-/plugin marketplace add iamtraction/claude-marketplace
+/plugin marketplace add iamtraction/powerclaws
 ```
 
 **Step 2** — Install the plugin:
 
 ```
-/plugin install sonar@claude-marketplace
+/plugin install sonar@powerclaws
 ```
 
 That's it. The sounds will play automatically from your next session.

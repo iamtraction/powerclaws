@@ -1,11 +1,11 @@
-# claude-marketplace
+# powerclaws
 
 A collection of useful Claude Code plugins by [@iamtraction](https://github.com/iamtraction).
 
 ## Add this marketplace
 
 ```
-/plugin marketplace add iamtraction/claude-marketplace
+/plugin marketplace add iamtraction/powerclaws
 ```
 
 ## Plugins
@@ -17,11 +17,11 @@ A collection of useful Claude Code plugins by [@iamtraction](https://github.com/
 ## Install a plugin
 
 ```
-/plugin install <plugin-name>@claude-marketplace
+/plugin install <plugin-name>@powerclaws
 ```
 
 Example:
 
 ```
-/plugin install sonar@claude-marketplace
+/plugin install sonar@powerclaws
 ```
