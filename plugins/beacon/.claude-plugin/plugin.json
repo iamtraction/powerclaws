@@ -1,0 +1,9 @@
+{
+  "name": "beacon",
+  "version": "1.0.0",
+  "description": "Tracks Claude Code session state in sessions.json. Build any tool on top of it.",
+  "author": {
+    "name": "iamtraction"
+  },
+  "keywords": [ "productivity", "multi-session", "session-tracking", "notification" ]
+}
