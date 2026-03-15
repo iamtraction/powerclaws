@@ -14,6 +14,14 @@
       "version": "1.0.0",
       "license": "MIT",
       "keywords": [ "notification", "sound", "productivity" ]
+    },
+    {
+      "name": "beacon",
+      "source": "./plugins/beacon",
+      "description": "Tracks Claude Code session state in sessions.json. Build any tool on top of it.",
+      "version": "1.0.0",
+      "license": "MIT",
+      "keywords": [ "productivity", "multi-session", "session-tracking", "notification" ]
     }
   ]
 }
