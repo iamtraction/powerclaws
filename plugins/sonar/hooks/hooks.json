@@ -1,8 +1,8 @@
 {
   "hooks": {
-    "Stop": [
+    "Notification": [
       {
-        "matcher": "",
+        "matcher": "idle_prompt",
         "hooks": [
           {
             "type": "command",
@@ -10,23 +10,19 @@
             "timeout": 10
           }
         ]
-      }
-    ],
-    "PostToolUseFailure": [
+      },
       {
-        "matcher": "",
+        "matcher": "permission_prompt",
         "hooks": [
           {
             "type": "command",
-            "command": "bash \"$CLAUDE_PLUGIN_ROOT/hooks/scripts/play-sound.sh\" error",
+            "command": "bash \"$CLAUDE_PLUGIN_ROOT/hooks/scripts/play-sound.sh\" prompt",
             "timeout": 10
           }
         ]
-      }
-    ],
-    "PermissionRequest": [
+      },
       {
-        "matcher": "",
+        "matcher": "elicitation_dialog",
         "hooks": [
           {
             "type": "command",
