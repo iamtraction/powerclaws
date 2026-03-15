@@ -1,9 +1,9 @@
 {
   "name": "sonar",
-  "version": "1.0.0",
-  "description": "Plays a sound when Claude Code finishes a task, hits an error, or needs your approval.",
+  "version": "1.1.0",
+  "description": "Plays a sound when Claude Code is idle and waiting for input, or needs your approval.",
   "author": {
-    "name": "traction"
+    "name": "iamtraction"
   },
   "keywords": [ "notification", "sound", "productivity" ]
 }

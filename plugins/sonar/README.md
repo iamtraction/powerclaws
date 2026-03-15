@@ -6,9 +6,8 @@ A Claude Code plugin that plays a sound when something happens so you can minimi
 
 | Event | Sound | When |
 |-------|-------|------|
-| `done.wav` | Done | Claude finishes a task and is ready for your next input |
-| `error.wav` | Error | A tool call fails mid-execution |
-| `prompt.wav` | Prompt | Claude needs your approval before continuing |
+| `done.wav` | Done | Claude has been idle and is waiting for your next input |
+| `prompt.wav` | Prompt | Claude needs your approval or input before continuing |
 
 ## Installation
 
@@ -36,4 +35,4 @@ That's it. The sounds will play automatically from your next session.
 
 ## Customizing Sounds
 
-Replace any of the `.wav` files in the `sounds/` directory with your own. Files must be named `done.wav`, `error.wav`, and `prompt.wav` and must be in WAV format.
+Replace any of the `.wav` files in the `sounds/` directory with your own. Files must be named `done.wav` and `prompt.wav` and must be in WAV format.
