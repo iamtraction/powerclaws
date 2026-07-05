@@ -1,0 +1,9 @@
+{
+  "name": "audit",
+  "version": "1.0.0",
+  "description": "A read-only code advisor. Audits a codebase, ranks what's actually worth doing, and writes handoff plans any agent can execute. Never edits your code.",
+  "author": {
+    "name": "iamtraction"
+  },
+  "keywords": [ "audit", "code-review", "planning", "tech-debt", "security", "productivity" ]
+}
