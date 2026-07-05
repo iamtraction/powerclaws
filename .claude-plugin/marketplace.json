@@ -22,6 +22,14 @@
       "version": "1.0.0",
       "license": "MIT",
       "keywords": [ "productivity", "multi-session", "session-tracking", "notification" ]
+    },
+    {
+      "name": "audit",
+      "source": "./plugins/audit",
+      "description": "A read-only code advisor. Audits a codebase, ranks what's worth doing, and writes handoff plans any agent can execute. Never edits your code.",
+      "version": "1.0.0",
+      "license": "MIT",
+      "keywords": [ "audit", "code-review", "planning", "tech-debt", "security", "productivity" ]
     }
   ]
 }
