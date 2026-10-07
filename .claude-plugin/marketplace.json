@@ -18,6 +18,10 @@
     {
       "name": "improvements",
       "source": "./plugins/improvements"
+    },
+    {
+      "name": "test-cases",
+      "source": "./plugins/test-cases"
     }
   ],
   "renames": {

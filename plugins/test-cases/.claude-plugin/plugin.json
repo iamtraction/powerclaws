@@ -1,0 +1,12 @@
+{
+  "name": "test-cases",
+  "version": "1.0.0",
+  "description": "A quality bar for your tests. Stops low-value tests at write time and prunes the ones you already have, in any language or framework.",
+  "author": {
+    "name": "iamtraction"
+  },
+  "homepage": "https://github.com/iamtraction/powerclaws/tree/main/plugins/test-cases",
+  "repository": "https://github.com/iamtraction/powerclaws",
+  "license": "MIT",
+  "keywords": [ "testing", "tests", "code-review", "tech-debt", "productivity" ]
+}
