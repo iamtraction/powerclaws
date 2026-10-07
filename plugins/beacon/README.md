@@ -32,10 +32,13 @@ Beacon hooks into Claude Code events and writes session state to `~/.claude/beac
     "branch": "string",
     "status": "active | waiting | done",
     "terminalPid": 12345,
+    "claudePid": 67890,
     "updatedAt": "2026-03-15T05:00:00.000Z"
   }
 }
 ```
+
+`terminalPid` is the nearest terminal (or editor) process above Claude Code, or `0` if none was found. `claudePid` is the Claude Code process; a session whose `claudePid` is dead gets pruned at the next registration.
 
 ## Requirements
 
