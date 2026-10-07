@@ -7,7 +7,7 @@ Findings are grouped by the question they answer, not by discipline. Nine catego
 - **Can you change it safely?** — confidence, ergonomics
 - **Where next?** — direction
 
-For every finding capture: **evidence** (`file:line`), the concrete **impact**, rough **effort** (S/M/L), **risk**, **confidence** (HIGH/MED/LOW), and a one-to-three sentence fix sketch. Report only what you can point at. No speculation, no code dumps.
+For every finding capture: **evidence** (`file:line`), **impact** (High/Med/Low: what leaving it unfixed costs), rough **effort** (S/M/L), **risk** (High/Med/Low: how likely the fix itself breaks something), **confidence** (High/Med/Low), and a one-to-three sentence fix sketch. Report only what you can point at. No speculation, no code dumps.
 
 When you're dispatched as a subagent for one category: audit only that category, return findings only, and don't re-litigate tradeoffs you were told are settled.
 

@@ -16,8 +16,11 @@
       "source": "./plugins/beacon"
     },
     {
-      "name": "audit",
-      "source": "./plugins/audit"
+      "name": "improvements",
+      "source": "./plugins/improvements"
     }
-  ]
+  ],
+  "renames": {
+    "audit": "improvements"
+  }
 }
