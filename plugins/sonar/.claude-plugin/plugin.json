@@ -1,9 +1,12 @@
 {
   "name": "sonar",
-  "version": "1.1.0",
-  "description": "Plays a sound when Claude Code is idle and waiting for input, or needs your approval.",
+  "version": "1.2.0",
+  "description": "Plays a sound when Claude Code is idle and waiting for input, needs your approval, or hits an error.",
   "author": {
     "name": "iamtraction"
   },
+  "homepage": "https://github.com/iamtraction/powerclaws/tree/main/plugins/sonar",
+  "repository": "https://github.com/iamtraction/powerclaws",
+  "license": "MIT",
   "keywords": [ "notification", "sound", "productivity" ]
 }

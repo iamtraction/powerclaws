@@ -12,7 +12,7 @@
         ]
       },
       {
-        "matcher": "permission_prompt",
+        "matcher": "permission_prompt|elicitation_dialog|elicitation_url_dialog",
         "hooks": [
           {
             "type": "command",
@@ -20,13 +20,14 @@
             "timeout": 10
           }
         ]
-      },
+      }
+    ],
+    "StopFailure": [
       {
-        "matcher": "elicitation_dialog",
         "hooks": [
           {
             "type": "command",
-            "command": "bash \"$CLAUDE_PLUGIN_ROOT/hooks/scripts/play-sound.sh\" prompt",
+            "command": "bash \"$CLAUDE_PLUGIN_ROOT/hooks/scripts/play-sound.sh\" error",
             "timeout": 10
           }
         ]
