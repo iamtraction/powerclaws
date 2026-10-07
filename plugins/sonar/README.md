@@ -4,7 +4,7 @@ A Claude Code plugin that plays a sound when something happens so you can minimi
 
 ## Sounds
 
-| Event | Sound | When |
+| File | Sound | When |
 |-------|-------|------|
 | `done.wav` | Done | Claude has been idle and is waiting for your next input |
 | `prompt.wav` | Prompt | Claude needs your approval or input before continuing |
