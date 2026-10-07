@@ -3,8 +3,6 @@
 # Registers the new session in sessions.json.
 set -euo pipefail
 
-PLUGIN_ROOT="${CLAUDE_PLUGIN_ROOT:-$(cd "$(dirname "$0")/../.." && pwd)}"
-
 # read hook metadata from stdin
 INPUT=$(cat -)
 SESSION_ID=$(node -e "try{process.stdout.write(JSON.parse(process.argv[1]).session_id||'')}catch{}" -- "$INPUT")
@@ -94,7 +92,7 @@ for i in $(seq 1 10); do
 done
 
 # register session
-node "$PLUGIN_ROOT/beacon.js" register \
+node "$CLAUDE_PLUGIN_ROOT/beacon.js" register \
   --session-id "$SESSION_ID" \
   --folder "$FOLDER" \
   --path "$CWD" \

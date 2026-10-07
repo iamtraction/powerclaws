@@ -2,7 +2,6 @@
   "hooks": {
     "SessionStart": [
       {
-        "matcher": "",
         "hooks": [
           {
             "type": "command",
@@ -12,13 +11,25 @@
         ]
       }
     ],
-    "PermissionRequest": [
+    "UserPromptSubmit": [
       {
-        "matcher": "",
         "hooks": [
           {
             "type": "command",
-            "command": "bash \"$CLAUDE_PLUGIN_ROOT/hooks/scripts/session-waiting.sh\"",
+            "command": "node",
+            "args": [ "${CLAUDE_PLUGIN_ROOT}/beacon.js", "status", "active" ],
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PermissionRequest": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node",
+            "args": [ "${CLAUDE_PLUGIN_ROOT}/beacon.js", "status", "waiting" ],
             "timeout": 10
           }
         ]
@@ -26,11 +37,11 @@
     ],
     "PreToolUse": [
       {
-        "matcher": "",
         "hooks": [
           {
             "type": "command",
-            "command": "bash \"$CLAUDE_PLUGIN_ROOT/hooks/scripts/session-resume.sh\"",
+            "command": "node",
+            "args": [ "${CLAUDE_PLUGIN_ROOT}/beacon.js", "status", "active" ],
             "timeout": 10
           }
         ]
@@ -38,11 +49,11 @@
     ],
     "PostToolUseFailure": [
       {
-        "matcher": "",
         "hooks": [
           {
             "type": "command",
-            "command": "bash \"$CLAUDE_PLUGIN_ROOT/hooks/scripts/session-error.sh\"",
+            "command": "node",
+            "args": [ "${CLAUDE_PLUGIN_ROOT}/beacon.js", "status", "active" ],
             "timeout": 10
           }
         ]
@@ -50,11 +61,23 @@
     ],
     "Stop": [
       {
-        "matcher": "",
         "hooks": [
           {
             "type": "command",
-            "command": "bash \"$CLAUDE_PLUGIN_ROOT/hooks/scripts/session-done.sh\"",
+            "command": "node",
+            "args": [ "${CLAUDE_PLUGIN_ROOT}/beacon.js", "status", "done" ],
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "StopFailure": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node",
+            "args": [ "${CLAUDE_PLUGIN_ROOT}/beacon.js", "status", "done" ],
             "timeout": 10
           }
         ]
@@ -62,11 +85,11 @@
     ],
     "SessionEnd": [
       {
-        "matcher": "",
         "hooks": [
           {
             "type": "command",
-            "command": "bash \"$CLAUDE_PLUGIN_ROOT/hooks/scripts/session-end.sh\"",
+            "command": "node",
+            "args": [ "${CLAUDE_PLUGIN_ROOT}/beacon.js", "remove" ],
             "timeout": 10
           }
         ]

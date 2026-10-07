@@ -1,9 +1,12 @@
 {
   "name": "beacon",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Tracks Claude Code session state in sessions.json. Build any tool on top of it.",
   "author": {
     "name": "iamtraction"
   },
+  "homepage": "https://github.com/iamtraction/powerclaws/tree/main/plugins/beacon",
+  "repository": "https://github.com/iamtraction/powerclaws",
+  "license": "MIT",
   "keywords": [ "productivity", "multi-session", "session-tracking", "notification" ]
 }

@@ -15,9 +15,10 @@ Beacon hooks into Claude Code events and writes session state to `~/.claude/beac
 | Event | What happens |
 |-------|-------------|
 | Session starts | Registers the session (folder, branch, terminal PID) |
+| Prompt submitted | Sets status → `active` |
 | Permission needed | Sets status → `waiting` |
 | Tool use starts / fails or denied | Sets status → `active` |
-| Turn complete | Sets status → `done` |
+| Turn complete or failed on an API error | Sets status → `done` |
 | Session ends | Removes the session |
 
 ## sessions.json schema
@@ -38,4 +39,4 @@ Beacon hooks into Claude Code events and writes session state to `~/.claude/beac
 
 ## Requirements
 
-Node.js (guaranteed available — Claude Code runs on Node.js).
+Node.js on your `PATH`. The native Claude Code installer doesn't provide it.
