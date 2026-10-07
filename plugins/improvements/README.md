@@ -15,9 +15,10 @@ The point: spend your best model on the hard part (understanding the code and ju
 | `/improvements` | Fast audit → ranked findings |
 | `/improvements deep` | Whole-repo audit, exhaustive |
 | `/improvements <category>` | Audit one category |
+| `/improvements <path…>` | Audit only those folders or files, e.g. `src/api` |
 | `/improvements plan <description>` | Skip the audit; write one plan for a task you already know |
 
-**Categories:** `bugs` · `failures` · `security` · `perf` · `debt` · `deps` · `tests` · `dx` · `direction`. Combine with depth, e.g. `/improvements deep security`.
+**Categories:** `bugs` · `failures` · `security` · `perf` · `debt` · `deps` · `tests` · `dx` · `direction`. Depth, category, and paths combine, e.g. `/improvements deep security src/api`.
 
 ## How it works
 

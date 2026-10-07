@@ -1,7 +1,7 @@
 ---
 name: improvements
 description: Find the few improvements worth making in a codebase, rank them by payoff, and write handoff plans for the ones you pick. Read-only — never edits your code.
-argument-hint: "[fast|deep] [bugs|failures|security|perf|debt|deps|tests|dx|direction] | plan <description> [--literal]"
+argument-hint: "[path…] [fast|deep] [bugs|failures|security|perf|debt|deps|tests|dx|direction] | plan <description> [--literal]"
 disable-model-invocation: true
 allowed-tools: Read Grep Glob Bash(git log *) Bash(git rev-parse *) Bash(git status *) Bash(git diff *) Bash(git ls-files *)
 ---
@@ -27,8 +27,18 @@ These hold for the whole session, including later turns where you write plans.
 | a category | Recon, then that category only, at `fast` depth unless `deep` is also given (e.g. `deep security`). |
 | `plan <description>` | The user already knows the task. Skip the audit, do light recon, investigate just enough to specify it, and write one plan. Ask about genuine ambiguities one at a time, each with a recommended default. |
 | `--literal` | Write plans at the literal tier (see Phase 4). Combines with any of the above. |
+| one or more paths | Limit the audit to those files or directories (see Scope). Combines with a depth and a category, e.g. `deep security src/api`. |
 
 Categories: `bugs` · `failures` · `security` · `perf` · `debt` · `deps` · `tests` · `dx` · `direction`.
+
+Any argument that isn't one of the keywords above is a path, except after `plan`, where the rest is the description. If a path doesn't exist, say so and stop rather than guessing what was meant.
+
+### Scope
+
+With paths given, the audit covers only files under them:
+- Recon still reads the repo-wide context (root README, `CLAUDE.md`, CI, root manifests, decision records), because the verification commands and conventions live there. Also read the nearest manifest and README inside the scope, such as `packages/api/package.json`, since a package may have its own commands.
+- Report only findings whose evidence is inside the scope. When a root cause sits outside it, say so in one line rather than auditing there.
+- Helper agents on a `deep` run split the scope between them, not the whole repo.
 
 ## Phase 1 — Recon
 
@@ -38,8 +48,8 @@ Orient before judging anything:
 - Copy the exact build, test, lint, and typecheck commands verbatim. They become the verification gates in every plan.
 - Note the conventions (code style, folder layout, error handling, state management). Plans must follow them.
 - Read decision records if present (`docs/adr/`, `docs/decisions/`, `DESIGN.md`, `CONTEXT.md`). They record tradeoffs that were settled on purpose, so you don't report deliberate choices as defects.
-- Find churn hotspots with `git log --format= --name-only -300`: the files that appear most often change most, so problems there cost the most.
-- Read `plans/README.md` if an earlier run left one. Don't re-report findings that are already planned or done. Re-check the open ones, and mark any that have since been fixed as `done`.
+- Find churn hotspots with `git log --format= --name-only -300` (append `-- <paths>` when scoped): the files that appear most often change most, so problems there cost the most.
+- Read `plans/README.md` if an earlier run left one. Don't re-report findings that are already planned or done. Re-check the open ones, and mark any that have since been fixed as `done`. On a scoped run, touch only entries whose evidence is inside the scope; you haven't looked at the rest, so leave them exactly as they are.
 
 ## Phase 2 — Audit
 
@@ -110,7 +120,7 @@ Write or update `plans/README.md` after every run, so findings survive the conve
 ```markdown
 # Improvements
 
-Last run: <YYYY-MM-DD> at <short SHA>
+Last run: <YYYY-MM-DD> at <short SHA> (scope: <paths, or whole repo>)
 
 ## Findings
 | # | Finding | Impact | Risk | Conf. | Action | Status | Evidence |
