@@ -1,0 +1,12 @@
+{
+  "name": "reviews",
+  "version": "1.0.0",
+  "description": "Verified, severity-ranked code reviews before you open a PR and on GitHub PRs.",
+  "author": {
+    "name": "iamtraction"
+  },
+  "homepage": "https://github.com/iamtraction/powerclaws/tree/main/plugins/reviews",
+  "repository": "https://github.com/iamtraction/powerclaws",
+  "license": "MIT",
+  "keywords": [ "code-review", "pull-requests", "review", "security", "productivity" ]
+}

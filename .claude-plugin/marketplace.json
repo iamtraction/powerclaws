@@ -20,6 +20,10 @@
       "source": "./plugins/improvements"
     },
     {
+      "name": "reviews",
+      "source": "./plugins/reviews"
+    },
+    {
       "name": "test-cases",
       "source": "./plugins/test-cases"
     }
