@@ -7,9 +7,9 @@ A Claude Code plugin that reviews a change before you open a PR, and reviews Git
 | Command | What it does |
 |---------|-------------|
 | `/reviews` | **Author mode.** Simplifies your diff with the built-in `/simplify`, runs your repo's checks, and reviews the branch, including uncommitted work. Output stays in your terminal. |
-| `/reviews <pr number, url, or branch>` | **Reviewer mode.** A branch name reviews that branch's open PR. Reviews the PR, its CI status, and your findings from earlier rounds. Posts to GitHub only when you ask. |
+| `/reviews <pr number, url, or branch>` | **Reviewer mode.** Reviews the PR, its CI status, and your findings from earlier rounds. Posts to GitHub only when you ask. A branch name reviews that branch's open PR. |
 | `/reviews base=<ref>` | Author mode against another base, for a branch stacked on another branch |
-| `/reviews … deep` | Review as deeply as a High-risk change |
+| `/reviews … deep` | Review at the deepest level, whatever the risk |
 | `/reviews <pr> post` | Offer the review for posting as soon as it's done |
 
 ## How it works
@@ -19,7 +19,7 @@ A Claude Code plugin that reviews a change before you open a PR, and reviews Git
 | Context | Reads `CLAUDE.md`, `REVIEW.md`, and the change's stated intent |
 | Risk tier | Low, Medium, or High, judged from the diff. CI configuration and paths `REVIEW.md` marks sensitive are never Low |
 | Hunt | Runs in parallel: the built-in `/code-review` at the tier's depth, a pass for intent, other instances of the same bug, and stale `CLAUDE.md` lines, and a security pass |
-| Verify | Three agents vote on each finding independently; a finding survives with two votes. Formatting and refactor-only suggestions are dropped |
+| Verify | Two agents check each finding independently; a third breaks ties. A finding survives with two of three votes. Formatting and refactor-only suggestions are dropped |
 | Tag | **Important**, **Nit**, or **Pre-existing** (there before the change) |
 
 **Low** means the automated review is enough on its own. **Medium** and **High** mean a person should also read the change.

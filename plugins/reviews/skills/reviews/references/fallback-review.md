@@ -4,7 +4,7 @@ Replaces the built-in `code-review` or `security-review` skill when it can't run
 
 ## Hunt
 
-Dispatch one hunter subagent per angle, in one message: angles 1, 2, 3, and 5 at levels `low` and `high`, all five at `xhigh`. Give each the diff to review (`git diff <base>` in author mode, so uncommitted work is included, plus untracked files), the stated intent, the CLAUDE.md and REVIEW.md text, and its angle:
+Dispatch one hunter subagent per angle, in one message: angles 1, 2, 3, and 5 at levels `low` and `medium`, all five at `high` and `xhigh`. Give each the diff to review (`git diff <base>` in author mode, so uncommitted work is included, plus untracked files), the stated intent, the CLAUDE.md and REVIEW.md text, and its angle:
 
 1. **Line by line**: every hunk and the whole of each touched function. What input, state, timing, or platform makes this line wrong? Off-by-one, inverted conditions, null access, missing `await`, swallowed errors, wrong-variable copy-paste.
 2. **Removed behavior**: for every deleted or replaced line, the invariant it enforced, and where the new code re-establishes it.

@@ -1,6 +1,6 @@
 {
   "name": "reviews",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Verified, severity-ranked code reviews before you open a PR and on GitHub PRs.",
   "author": {
     "name": "iamtraction"
